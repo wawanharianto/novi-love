@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>I Love U Novi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe6e6, #ffcccc);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Pacifico', cursive;
+      overflow: hidden;
+    }
+
+    .heart {
+      font-size: 100px;
+      color: red;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .heart:hover {
+      transform: scale(1.2);
+    }
+
+    .message {
+      margin-top: 30px;
+      font-size: 32px;
+      background: linear-gradient(45deg, #ff3366, #ff66cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards, floatText 3s ease-in-out infinite;
+      display: none;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="heart" onclick="showMessage()">❤️</div>
+  <div class="message" id="loveMessage">I love u Novi sayangku</div>
+
+  <!-- Autoplay Music -->
+  <audio autoplay loop>
+    <source src="audio/songs.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    function showMessage() {
+      const msg = document.getElementById('loveMessage');
+      msg.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
